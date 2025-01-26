@@ -16,7 +16,7 @@ In this tutorial, you'll learn how to begin your own project using the programmi
 ## Part 1: Setting up your project
 ### Creating your local repository
 
-Begin by creating a repository on your local machine. A repository is a type of centrally located storage where you can keep your files. Do create one, open up terminal on your local machine. Navigate to where you would like to store your repository and type the following commands:
+Begin by creating a repository on your local machine. A repository is a type of centrally located storage where you can keep your files. To create one, open up terminal on your local machine. Navigate to where you would like to store your repository and type the following command:
 
 ```
 mkdir rust-tutorial
@@ -42,7 +42,8 @@ git add README.md
 git commit -m “Initial commit with README”
 ```
 
-The first line of code creates the README with the text "Rust Tutorial". Then, the changes (a created file with additions to it) are added and commited to our local repository. In Part 2, you will set up a remote repository using GitHub, a website that is a powerful tool for storing, saving, and collborating on projects. 
+!!! note 
+    The first line of code creates the README with the text "Rust Tutorial". Then, the changes (a created file with additions to it) are added and commited to our local repository. In Part 2, you will set up a remote repository using GitHub, a website that is a powerful tool for storing, saving, and collborating on projects. 
 
 ### Creating a remote repository using GitHub
 
@@ -53,7 +54,7 @@ Log into your account on GitHub. Create a new repository [here](https://github.c
 - Visibility: Public
 - Make sure the repository is not initialized with a README.md, .gitignore, or license. 
 
-Create your repository.
+Once these conditions are met, click ```Create your repository```.
 
 ### Connecting your local and remote repositories
 Return to the terminal on your local machine and ensure you are still in your local repository. To connect your repositories, run the following command:
@@ -80,7 +81,7 @@ Confirm your repositories are linked by navigating to your GitHub repository to 
 A "dev container" is a Docker container specifically configured to provide a fully featured development environment. This makes collaboration with partners easy, as all collaboraters work in a uniform environment. 
 
 ### Configure your container
-Open VSCode, and open the "rust-tutorial" directory. Naviagte to the left of the screen and click Extensions. In the search bar, search for Dev Containers, and install it. After it installs, navigate back to the File Explorer, and create a new directory inside your project called ```.devcontainers```. Create a file inside of this directory titled devcontiner.json. Enter the following code into this file:
+Open VSCode, and open the "rust-tutorial" directory. Navigate to the left of the screen and click Extensions. In the search bar, search for Dev Containers, and install it. After it installs, navigate back to the File Explorer, and create a new directory inside your project called ```.devcontainers```. Create a file inside of this directory titled ```devcontainer.json```. Enter the following code into this file:
 
 ```
 {
@@ -109,6 +110,9 @@ This code does the following:
 ### Reopen the Project in a VSCode Dev Container
 Click ```Ctrl + Shift + P``` (or ```Cmd + Shift + P``` on Mac), and type "Dev Containers: Reopen in Container." This reopens your project inside the dev container we just set up. Now you should see a file called ```main.rs``` appear in your project's directory, where you will be coding. 
 
+!!! note
+    To ensure the dev container gives you access to the correct version of Rust, run rustc --version in your terminal. You should see a recent version of Rust show up.
+
 ## Part 3: Coding in Rust
 Copy and paste the following code into your ```main.rs```:
 
@@ -117,6 +121,8 @@ fn main() {
     println!("Hello COMP423");
 }
 ```
+!!! note
+    **Maybe give a quick, brief explanation of this code and link the documentation to show people how they would go about creating a function in a language they are not familiar with**.
 
 Save the file, and reopen your dev container. Now it's time to run your program!
 
@@ -133,5 +139,7 @@ Here is a breakdown of what this accomplishes:
 - ```rustc main.rs```: This compiles your program
 - ```./main```: This runs your program
 
-
+!!! note
+    At the very bottom of the writeup it says to use the ```cargo new``` command with the ```-vcs none``` flag, and also to talk about the difference between ```cargo build``` and ```cargo run```.
+    
 **Congratulations! You have just completed the Rust project setup tutorial!**
