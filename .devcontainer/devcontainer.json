@@ -4,9 +4,7 @@
   "customizations": {
     "vscode": {
       "settings": {},
-      "extensions": [
-        "ms-python.python"
-      ]
+      "extensions": ["ms-python.python"]
     }
   },
   "postCreateCommand": "pip install -r requirements.txt"
