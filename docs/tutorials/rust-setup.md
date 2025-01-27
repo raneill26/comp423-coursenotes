@@ -95,7 +95,7 @@ Open VSCode, and open the "rust-tutorial" directory. Navigate to the left of the
       ]
     }
   },
-  "postCreateCommand": "cargo init --bin --name hello_423 && touch main.rs"
+  "postCreateCommand": "rustc --version"
 }
 ```
 
@@ -108,7 +108,7 @@ This code does the following:
 - Gives users the latest version of Rust
 
 ### Reopen the Project in a VSCode Dev Container
-Click ```Ctrl + Shift + P``` (or ```Cmd + Shift + P``` on Mac), and type "Dev Containers: Reopen in Container." This reopens your project inside the dev container we just set up. Now you should see a file called ```main.rs``` appear in your project's directory, where you will be coding. To ensure the dev container gives you access to the correct version of Rust, run rustc --version in your terminal. You should see the most recent version of Rust show up.
+Click ```Ctrl + Shift + P``` (or ```Cmd + Shift + P``` on Mac), and type "Dev Containers: Reopen in Container." This reopens your project inside the dev container we just set up. To ensure the dev container gives you access to the correct version of Rust, ```rustc --version``` will automatically run every time you open the dev container. You should see the most recent version of Rust show up. 
 
 ## Part 3: Coding in Rust
 Rust projects are structured using ```cargo```, Rust's package manager. Lets walk through the commands needed to run your code
@@ -121,10 +121,10 @@ cargo new rust_tutorial_project --bin --vcs none
 cd rust_tutorial_project  
 ```
 
-This creates a project folder called ```rust_tutorial_project``` inside of your directory that includes the file ```main.rs```. This is where you will do the coding for your project. The ```--vcs none``` flag (vcs is short for Version Control System) is included because source control is not needed for this small project. 
+This creates a project folder called ```rust_tutorial_project``` inside of your directory that includes an ```src``` directory with the file ```main.rs```. This is where you will do the coding for your project. The ```--vcs none``` flag (vcs is short for Version Control System) is included because source control is not needed for this small project.
 
 ### Writing your first program in Rust
-Open your ```main.rs``` file and copy and paste the following code:
+Open your ```main.rs``` file. There may be prewritten code inside this file with a basic "Hello World" function. Remove it if applicable, and copy and paste the following code:
 
 ```
 fn main() {
@@ -140,7 +140,7 @@ Now it's time to run your program!
 Rust has two ways of running its programs: with ```cargo build``` and ```cargo run```. We will walk through both options here:
 
 #### Using ```cargo build```:
-Navigate to the VSCode terminal and enter the following commands:
+Ensure you are currently in the rust_tutorial_project directory. Navigate to the VSCode terminal and enter the following commands:
 ```
 cargo build
 ./target/debug/rust_tutorial_project  
