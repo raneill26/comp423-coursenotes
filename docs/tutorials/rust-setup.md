@@ -94,8 +94,7 @@ Open VSCode, and open the "rust-tutorial" directory. Navigate to the left of the
         "rust-lang.rust-analyzer"
       ]
     }
-  },
-  "postCreateCommand": "rustc --version"
+  }
 }
 ```
 
@@ -104,11 +103,10 @@ This code does the following:
 - Creates a name of your container
 - Specifies the docker image to use
 - Customizes programming languages and extensions
-- Runs a command everytime the dev container is built
 - Gives users the latest version of Rust
 
 ### Reopen the Project in a VSCode Dev Container
-Click ```Ctrl + Shift + P``` (or ```Cmd + Shift + P``` on Mac), and type "Dev Containers: Reopen in Container." This reopens your project inside the dev container we just set up. To ensure the dev container gives you access to the correct version of Rust, ```rustc --version``` will automatically run every time you open the dev container. You should see the most recent version of Rust show up. 
+Click ```Ctrl + Shift + P``` (or ```Cmd + Shift + P``` on Mac), and type "Dev Containers: Reopen in Container." This reopens your project inside the dev container we just set up.
 
 ## Part 3: Coding in Rust
 Rust projects are structured using ```cargo```, Rust's package manager. Lets walk through the commands needed to run your code
@@ -121,10 +119,11 @@ cargo new rust_tutorial_project --bin --vcs none
 cd rust_tutorial_project  
 ```
 
-This creates a project folder called ```rust_tutorial_project``` inside of your directory that includes an ```src``` directory with the file ```main.rs```. This is where you will do the coding for your project. The ```--vcs none``` flag (vcs is short for Version Control System) is included because source control is not needed for this small project.
+This creates a project folder called ```rust_tutorial_project``` inside of your directory. It includes a ```src``` directory with the file ```main.rs```. This is where you will do the coding for your project. 
+```--vcs none``` (vcs is short for Version Control System) is included because source control is not needed for this project.
 
 ### Writing your first program in Rust
-Open your ```main.rs``` file. There may be prewritten code inside this file with a basic "Hello World" function. Remove it if applicable, and copy and paste the following code:
+Open your ```main.rs``` file. There may be prewritten code inside this file. Remove it if applicable, and copy and paste the following code into ```main.rs```:
 
 ```
 fn main() {
@@ -132,12 +131,12 @@ fn main() {
 }
 ```
 
-In Rust, all of your code will be in functions, similar to Java. There are no parameters used in your function, so you will keep the parenthesis empty for this snippet. The code in your function will be inside curly braces. For this tutorial, we are printing a string using the Rust function println!(). To learn more advanced Rust functions, you can go to the offical Rust language website [here](https://www.rust-lang.org/learn)
+Similar to Java, your code in Rust will be in functions you declare. The code in your function will be inside curly braces. For this tutorial, we are printing a string using the Rust function ```println!()```. To learn more advanced Rust functions, you can go to the offical Rust language website [here](https://www.rust-lang.org/learn)
 
 Now it's time to run your program!
 
 ### Building and running your program
-Rust has two ways of running its programs: with ```cargo build``` and ```cargo run```. We will walk through both options here:
+Rust has two ways of running its programs: with ```cargo build``` and ```cargo run```. Lets walk through both options here:
 
 #### Using ```cargo build```:
 Ensure you are currently in the rust_tutorial_project directory. Navigate to the VSCode terminal and enter the following commands:
